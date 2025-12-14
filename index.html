@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>RuEng Linguist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8fafc;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .font-serif {
+        font-family: 'Merriweather', serif;
+      }
+      /* Hide scrollbar for clean horizontal scroll */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* --- Wiktionary Content Styling --- */
+      
+      /* Block styling to prevent weird floats */
+      .wiktionary-content {
+         overflow-wrap: break-word;
+      }
+
+      /* Tables (Generic + MediaWiki classes) */
+      .wiktionary-content .wikitable,
+      .wiktionary-content table.m-decl-noun-table {
+        background-color: #f8f9fa;
+        color: #202122;
+        margin: 1em 0;
+        border: 1px solid #a2a9b1;
+        border-collapse: collapse;
+        font-size: 0.9rem;
+        width: 100%;
+        display: block;
+        overflow-x: auto; /* Allow horizontal scroll for tables on mobile */
+        float: none !important; /* Override desktop floats */
+        clear: both;
+      }
+      
+      .wiktionary-content th, 
+      .wiktionary-content td {
+        border: 1px solid #a2a9b1;
+        padding: 0.4em 0.5em;
+        vertical-align: middle;
+      }
+      
+      .wiktionary-content th {
+        background-color: #eaecf0;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      /* Images */
+      .wiktionary-content .thumb, 
+      .wiktionary-content .tright, 
+      .wiktionary-content .tleft,
+      .wiktionary-content figure {
+         float: none !important;
+         display: block;
+         margin: 1rem auto;
+         max-width: 100%;
+         clear: both;
+      }
+      .wiktionary-content img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Collapsible Tables (NavFrame) */
+      .wiktionary-content .NavFrame {
+        border: 1px solid #a2a9b1;
+        margin-bottom: 1rem;
+        clear: both;
+      }
+      .wiktionary-content .NavHead {
+        background-color: #efefef;
+        padding: 8px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .wiktionary-content .NavContent {
+        display: block !important;
+        overflow-x: auto;
+      }
+
+      /* Headings */
+      .wiktionary-content h3, .wiktionary-content h4, .wiktionary-content h5 {
+        font-family: 'Merriweather', serif;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 0.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #334155;
+        clear: both;
+      }
+      .wiktionary-content h3 { font-size: 1.25rem; }
+      .wiktionary-content h4 { font-size: 1.1rem; }
+      .wiktionary-content h5 { font-size: 1rem; }
+
+      /* Lists */
+      .wiktionary-content ul, .wiktionary-content ol {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+        list-style-type: disc;
+      }
+      .wiktionary-content ol {
+        list-style-type: decimal;
+      }
+      
+      /* Links */
+      .wiktionary-content a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+      .wiktionary-content a.new {
+        color: #ef4444; /* Red for missing pages */
+      }
+      
+      /* Cleanup clutter */
+      .wiktionary-content .mw-editsection,
+      .wiktionary-content .sister-wikipedia,
+      .wiktionary-content .interproject-box,
+      .wiktionary-content .noprint {
+        display: none !important;
+      }
+
+      /* Inflection tables specific fixes */
+      .wiktionary-content .inflection-table tr, 
+      .wiktionary-content .grammar-table tr {
+        background: transparent;
+      }
+    </style>
+
+<link rel="stylesheet" href="/index.css">
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.33.0",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/rueng-linguist/assets/index-DuY2sADd.js"></script>
+</head>
+  <body>
+    <div id="root"></div>
+</body>
+</html>
